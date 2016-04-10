@@ -4,8 +4,8 @@ trait Predict {
 	def theta0(): Double
 	def theta1(): Double
 
-	def predictPrice(mil: Int): Double = {
-		return (theta0 + theta1 * mil)
+	def predictPrice(mil: Int, t0: Double = theta0, t1: Double = theta1): Double = {
+		return (t0 + t1 * mil)
 	}
 
 	def predict: Unit = {
