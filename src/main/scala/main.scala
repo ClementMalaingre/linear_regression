@@ -14,10 +14,10 @@ object Main {
         ConsoleProxy.flush()
         var cont = true
         while (cont) {
-            ConsoleProxy.readLine("> ") match {
-                case "learn"        => ConsoleProxy.println("you chose learn!")
+            ConsoleProxy.readLine("cmd? ").trim match {
+                case "learn"        => Learn.learn
                 case "predict"      => LinearRegression.predict
-                case "state"        => ConsoleProxy.println("Theta0 = ${LinearRegression.theta0} ; theta1 = ${LinearRegression.theta1}")
+                case "state"        => ConsoleProxy.println(s"Theta0 = ${LinearRegression.theta0} ; theta1 = ${LinearRegression.theta1}")
                 case ""             => {}
                 case null | "exit"  => ConsoleProxy.println("Bye !") ; cont = false
                 case _              => ConsoleProxy.println("This is not a valid command")
