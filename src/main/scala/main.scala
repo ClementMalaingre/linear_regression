@@ -17,6 +17,7 @@ object Main {
             ConsoleProxy.readLine("> ") match {
                 case "learn"        => ConsoleProxy.println("you chose learn!")
                 case "predict"      => LinearRegression.predict
+                case "state"        => ConsoleProxy.println("Theta0 = ${LinearRegression.theta0} ; theta1 = ${LinearRegression.theta1}")
                 case ""             => {}
                 case null | "exit"  => ConsoleProxy.println("Bye !") ; cont = false
                 case _              => ConsoleProxy.println("This is not a valid command")

@@ -1,6 +1,6 @@
 object Learn with Predict{
 	def parseData = try {
-			Some(scala.io.Source.fromFile("data.csv").getLines map(_ split ',' map (_ toDouble) toList) drop(1))
+			Some(scala.io.Source.fromFile("data.csv").getLines map(_ split ',' toList) drop(1) map (_ map (_ toDouble)))
 		} catch {
 			case _: Throwable	=> None
 		}
