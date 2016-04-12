@@ -1,10 +1,5 @@
 import jline.console.ConsoleReader
-
-
 object ConsoleProxy extends ConsoleReader
-
-
-
 object Main {
     def main(args: Array[String]): Unit = {
         ConsoleProxy.println("Welcome in this tool of evolutive mileage / price prediction.")
@@ -18,6 +13,7 @@ object Main {
                 case "learn"        => Learn.learn
                 case "predict"      => LinearRegression.predict
                 case "state"        => ConsoleProxy.println(s"Theta0 = ${LinearRegression.theta0} ; theta1 = ${LinearRegression.theta1}")
+                case "represent"    => LinearRegression.represent
                 case ""             => {}
                 case null | "exit"  => ConsoleProxy.println("Bye !") ; cont = false
                 case _              => ConsoleProxy.println("This is not a valid command")

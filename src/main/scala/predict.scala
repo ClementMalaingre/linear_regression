@@ -1,10 +1,10 @@
 import scala.language.postfixOps
 
 trait Predict {
-	def theta0(): BigDecimal
-	def theta1(): BigDecimal
+	def theta0(): Double
+	def theta1(): Double
 
-	def predictPrice(mil: BigDecimal): BigDecimal = {
+	def predictPrice(mil: Double): Double = {
 		return (theta0 + theta1 * mil)
 	}
 
