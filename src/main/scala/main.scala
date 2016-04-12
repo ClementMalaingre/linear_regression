@@ -20,5 +20,6 @@ object Main {
             }
             ConsoleProxy.flush()
         }
+        LinearRegression.commitToFile()
     }
 }

@@ -28,11 +28,11 @@ object LinearRegression extends Predict {
     def commitToFile(fileName: String = "save.xml") = XML.save(fileName, <root><val name="theta0">{theta0}</val><val name="theta1">{theta1}</val></root>)
 
     def represent = {
-        def f = Figure()
-        def p = f.subplot(0)
+        val f = Figure()
+        val p = f.subplot(0)
         val data = Learn.parseData.get
-        p += plot(data map(_(0)), data map(_(1)), '.')
         val x = linspace(0, data.foldLeft(data(0)(0))(_ max _(0)))
+        p += plot(data map(_(0)), data map(_(1)), '.')
         p += plot(x, x map(predictPrice(_)))
         f.saveas("regression.png")
     }
